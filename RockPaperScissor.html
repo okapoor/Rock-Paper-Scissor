@@ -3,18 +3,37 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Rock Paper Scissors Part 2
-  </title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Rock Paper Scissors Part 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
 <body>
+  <div class="page-header">
+    <h1>A game of Rock, Paper, Scissor</h1>
+  </div>
 
-  <div class="jumbotron">
-    <h1>Rock Paper Scissor!!</h1> 
-    <hr>
-    <h2>Please chose r, p or s to begin</h2>
-    <div id="game">
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Player  : </h2>
+    </div>
+    <div class="col-md-3">
+      <img id="playerimage" src="assets/images/what.png" width="100" height="100">
+    </div>
+    <div class="col-md-3">
+      <h2>Computer  : </h2>
+    </div>
+    <div class="col-md-3">
+      <img id="compimage" src="assets/images/what.png" width="100" height="100">
+    </div>
+  </div>
+  <br>
+    <div class="jumbotron">
+      <h3>ScoreBoard</h3> 
+      <hr>
+      <h2>Please chose r, p or s to begin</h2>
+        <div id="game">
+        </div>
     </div>
 </div>
 
@@ -68,14 +87,38 @@
         }
       };
 
+
+
+      //Update images based on user input
+      if (userGuess == "s") {
+        document.getElementById("playerimage").src = "assets/images/scissor.png";
+      }
+      else if (userGuess == "r") {
+        document.getElementById("playerimage").src = "assets/images/rock.png";
+      }
+      else if (userGuess == "p") {
+        document.getElementById("playerimage").src = "assets/images/paper.png";
+      }
+      else {
+        document.getElementById("playerimage").src = "assets/images/error.png";
+      }
+
+      if (computerGuess == "s") {
+        document.getElementById("compimage").src = "assets/images/scissor.png";
+      }
+      else if (computerGuess == "r") {
+        document.getElementById("compimage").src = "assets/images/rock.png";
+      }
+      else if (computerGuess == "p") {
+        document.getElementById("compimage").src = "assets/images/paper.png";
+      };
+
       calculateScore (userGuess, computerGuess);
       console.log ("Score is as follows : " + "Win : " + win + " Losses " + loses + " Ties " + ties);
       var imagepath;
 
 
           var html =
-          "<p>You chose: " + userGuess + "</p>" +
-          "<p>The computer chose: " + computerGuess + "</p>" +
           "<p>wins: " + win + "</p>" +
           "<p>losses: " + loses + "</p>" +
           "<p>ties: " + ties + "</p>";
