@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissor - MultiPlayer</title>	
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<div class="container">
+<!-- 		<div class="jumbotron" style="background-color: #28b9d6; color: white;">
+			<h1 class="text-center animated bounceInDown"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Rock Paper Scissor</h1>
+		</div> -->
+
+
+		<div class="row">
+			<div class="col-md-5 col-md-offset-3">
+	            <div class="input-group">
+	                <input id="playerinput" type="text" class="form-control input-md" placeholder="Player Name" value="Player Name"/>
+	                <span class="input-group-btn">
+	                    <button class="btn btn-warning btn-md" id="playbutton">
+	                        Play!</button>
+	                </span>
+	            </div>
+            </div>
+		</div>
+		<hr>
+		<div class="row">
+
+			<div class="col-md-4 col-md-offset-1">
+				<div class="panel panel-default text-center">
+				  <div class="panel-heading" id="p1h">
+				    Player 1
+				  </div>
+				  <div class="panel-body">
+					<img class="card-img-top" src="assets/images/what.png" width="50px" height="50px">
+					<br><br>
+				    <a href="#" class="btn btn-primary btn-sm choice p1" data-value="Rock">Rock</a>
+				    <a href="#" class="btn btn-primary btn-sm choice p1" data-value="Rock">Paper</a>
+				    <a href="#" class="btn btn-primary btn-sm choice p1" data-value="Rock">Scissor</a>
+				  </div>
+				  <div class="panel-footer text-muted">
+				    <span id="Player1Score">Score : 1</span>
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-md-offset-1">
+				<div class="panel panel-default text-center">
+				  <div class="panel-heading" id="p2h">
+				    Player 2
+				  </div>
+				  <div class="panel-body">
+					<img class="card-img-top" src="assets/images/what.png" width="50px" height="50px">
+					<br><br>
+				    <a href="#" class="btn btn-primary btn-sm choice p2" data-value="Rock">Rock</a>
+				    <a href="#" class="btn btn-primary btn-sm choice p2" data-value="Paper">Paper</a>
+				    <a href="#" class="btn btn-primary btn-sm choice p2" data-value="Scissor">Scissor</a>
+				  </div>
+				  <div class="panel-footer text-muted">
+				    <span id="Player1Score">Score : 1</span>
+				  </div>
+				</div>
+			</div>
+		</div>
+		
+		<hr>
+	    <div class="row">
+	        <div class="col-md-12">
+	            <div class="panel panel-primary">
+	                <div class="panel-heading" id="accordion">
+	                    <span class="glyphicon glyphicon-comment"></span> Chat
+	                </div>
+	                <div class="panel-body" id="mypanel">
+	                    <ul class="chat" id="conversation">
+	                        <li>
+		                        <span class="chat-img pull-left">
+		                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle"/>
+		                        </span>
+	                            <div class="chat-body clearfix">
+	                                <div class="header">
+	                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+	                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+	                                </div>
+	                                <p class="pull-left">
+	                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+	                                    dolor, quis ullamcorper ligula sodales.
+	                                </p>
+	                            </div>
+	                        </li>
+	                        <li>
+		                        <span class="chat-img pull-right">
+		                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle"/>
+		                        </span>
+	                            <div class="chat-body clearfix">
+	                                <div class="header">
+	                                    <strong class="primary-font pull-right">Jack Sparrow</strong> <small class="pull-left text-muted">
+	                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+	                                </div>
+	                                <br>
+	                                <p class="pull-right">
+	                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+	                                    dolor, quis ullamcorper ligula sodales.
+	                                </p>
+	                            </div>
+	                        </li>	         
+	                    </ul>
+	                </div>
+	                <div class="panel-footer">
+	                    <div class="input-group">
+	                        <input id="chatMessage" type="text" disabled="true" class="form-control input-sm" placeholder="Type your message here..." />
+	                        <span class="input-group-btn">
+	                            <button class="btn btn-warning btn-sm" id="sendchat">
+	                                Send</button>
+	                        </span>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+</html>
