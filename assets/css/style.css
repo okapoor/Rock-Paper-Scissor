@@ -5,17 +5,43 @@
     padding: 0;
 }
 
-.jumbotron, .panel-footer {
-background: linear-gradient(270deg, #00f6ff, #ffe59c, #00ffc4);
+ .jumbotron, .panel-footer, body {
+
+background: linear-gradient(270deg, #00e6e6, #4264b1, #fa54a6);
+background-size: 600% 600%;
+
+-webkit-animation: flow 25s ease infinite;
+-moz-animation: flow 25s ease infinite;
+animation: flow 25s ease infinite;
+
+
+
+}
+
+img {
+  -webkit-animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.jumbotron {
+     color: white;
+    font-family: 'Pacifico', cursive;
+}
+
+/*.jumbotron {
+    font-size: 72px;
+background: linear-gradient(270deg, #131212, #4264b1, #fa54a6);
 background-size: 600% 600%;
 
 -webkit-animation: flow 13s ease infinite;
 -moz-animation: flow 13s ease infinite;
 animation: flow 13s ease infinite;
+}*/
 
 
 
-}
+
 
 .panel-footer {
 background: linear-gradient(270deg, #ffabab, #71fcfa, #5495fa);

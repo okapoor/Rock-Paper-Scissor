@@ -203,6 +203,8 @@ function updateResults () {
 		$("#lossesp2").text("Losses: " + p1Lose)
 		$("#tiesp1").text("Ties: " + p0Ties)
 		$("#tiesp2").text("Ties: " + p1Ties)
+
+		
 		setTimeout(resetGame, 2000)
 	}
 }
@@ -307,7 +309,7 @@ database.ref("/users").on("child_removed", function(snapshot) {
 	if (snapshot.val() !== null) {
     var currentPlayers = snapshot.val().name;
     var playerNum = snapshot.val().playerNum;
-    $("#p"+playerNum+"h").text(currentPlayers + "has left the game. Please wait for another player to join");
+    $("#p"+playerNum+"h").html("<h5>"+currentPlayers + " has left the game. Please wait for another player to join" +"</h5>");
     $("#p"+playerNum+"h").removeAttr("data-value")
     // $("#userdatatable")
 	}
@@ -327,7 +329,9 @@ database.ref("/choices").on("value", function(snapshot) {
 			players.push(playerName);
 			choices.push(playerChoice);
 			$(".p"+whichPlayer).css("visibility", "hidden");
+			$("#p"+whichPlayer+"Img").removeClass("animate flip");
 			$("#p"+whichPlayer+"Img").attr("src", "assets/images/"+playerChoice+".png")
+			$("#p"+whichPlayer+"Img").addClass("animate flip");
 		})
 		database.ref("/scoreboard").once('value').then(function(snapshot) {
 			console.log("====getting value of scoreboard======")
@@ -363,33 +367,7 @@ database.ref("/choices").on("value", function(snapshot) {
 })
 
 
-// database.ref("/scoreboard").on("value", function(snapshot){
-// 		console.log("------")
-// 	console.log(snapshot.val())
-// 	console.log(snapshot.numChildren())
-// 	console.log("------")
-// 	var players = [];
-// 	var choices = [];
-// 	if (snapshot.numChildren() === 2) {
-// 		snapshot.forEach(function(childSnap){
-// 			var playerName = childSnap.val().name;
-// 			var whichPlayer = childSnap.val().playerNum;
-// 			var playerChoice = childSnap.val().choice;
-// 			players.push(playerName);
-// 			choices.push(playerChoice);
-// 			$(".p"+whichPlayer).css("visibility", "hidden");
-// 			$("#p"+whichPlayer+"Img").attr("src", "assets/images/"+playerChoice+".png")
-// 			$(".p"+whichPlayer).removeClass("btn-danger");
-// 			$(".p"+whichPlayer).addClass("btn-primary");
-// 			$(this).removeClass("btn-primary");
-// 			$(this).addClass("btn-danger");
-// 		})
 
-// 		updateResults(players, choices);
-// 	}
-
-
-// })
 
 
 
