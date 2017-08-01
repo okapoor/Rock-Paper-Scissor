@@ -204,7 +204,7 @@ function updateResults () {
 		$("#tiesp1").text("Ties: " + p0Ties)
 		$("#tiesp2").text("Ties: " + p1Ties)
 
-		
+
 		setTimeout(resetGame, 2000)
 	}
 }
@@ -329,9 +329,7 @@ database.ref("/choices").on("value", function(snapshot) {
 			players.push(playerName);
 			choices.push(playerChoice);
 			$(".p"+whichPlayer).css("visibility", "hidden");
-			$("#p"+whichPlayer+"Img").removeClass("animate flip");
 			$("#p"+whichPlayer+"Img").attr("src", "assets/images/"+playerChoice+".png")
-			$("#p"+whichPlayer+"Img").addClass("animate flip");
 		})
 		database.ref("/scoreboard").once('value').then(function(snapshot) {
 			console.log("====getting value of scoreboard======")
